@@ -1,0 +1,14 @@
+.place-box {
+    background-image: url('../../images/sundorbon.png');
+    width: 120px;
+    height: 450px;
+    background-size: 250px;
+    background-repeat:no-repeat;
+    margin-right: 0px;
+
+    
+    
+}
+.place-box h1{
+ margin-top:320px;
+}

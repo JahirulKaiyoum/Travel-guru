@@ -1,0 +1,18 @@
+
+.logo{
+margin-top: 20px;
+}
+.menu{
+margin-top:40px;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 25px;
+    margin-left:25px;
+    color: Black;
+
+}
+.srch-box{
+width:300px;
+}

@@ -1,0 +1,9 @@
+.create-btn{
+    width:100%;
+}
+.external-login-btn{
+    width:100%;
+    border-radius:50px;
+    margin-bottom: 10px;
+    padding:7px;
+}
