@@ -8,13 +8,13 @@ import './Home.css'
 const Home = () => {
   const allPlaces = fakePlaces;
 
-  // console.log(allPlaces);
+
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
     const selectPlace = allPlaces.map((place) => place);
     setPlaces(selectPlace);
-    // console.log(places);
+    
   }, []);
 
   return (
@@ -27,10 +27,10 @@ const Home = () => {
             <Button>Book Here</Button>
           </div>
 
-          <div className="col-md-8">
+          <div className="col-md-8 ">
             <div className="row">
                           {places.map(place => <Places place={place}></Places>
-                //  <Link to={`/placeDetails/`}><Places place={place}></Places></Link>
+                
                 
               )}
             </div>

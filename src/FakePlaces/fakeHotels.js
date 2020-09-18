@@ -1,8 +1,8 @@
 const fakeHotels = [
     {
-    name: 'Royal Tulip Sea Pearl Beach Resort & Spa',
+    name: 'Royal Tulip Sea Pearl Beach Resort ',
     phone: '+880 1844-016194',
-    address: 'Jaliapalong, Ukhiya, Inani Shofir Bil, Coxs Bazar 4750 Bangladesh',
+    address: 'Jaliapalong, Ukhiya, Inani Shofir Bil,Coxs Bazar Bangladesh',
         image: 'https://i.ibb.co/zQfH9wj/Rectangle-26.png',
         location: "sreemangal",
         id:1,

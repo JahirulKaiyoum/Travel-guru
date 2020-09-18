@@ -18,7 +18,6 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-        {/*<p>Email:{loggedInUser.email}</p>*/}
         <Header></Header>
         <Switch>
           <Route path="/login">
@@ -28,7 +27,7 @@ function App() {
           <SelectHotel></SelectHotel>
           </PrivateRoute>
           
-          <Route path="/singlePlaceDetails/:placeId">
+          <Route exact path="/singlePlaceDetails/:placeId">
             <SinglePlaceDetails></SinglePlaceDetails>
           </Route>
           <Route  path="/home">

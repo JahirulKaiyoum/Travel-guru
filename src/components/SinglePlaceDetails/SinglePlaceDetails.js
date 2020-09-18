@@ -6,7 +6,6 @@ import './SinglePlaceDetails.css'
 
 const SinglePlaceDetails = () => {
   const { placeId } = useParams();
-  // console.log(placeId);
 
   const [place, setPlace] = useState({});
  
@@ -16,7 +15,7 @@ const SinglePlaceDetails = () => {
     setPlace(singlePlace);
   }, []);
 
-  // console.log(place);
+
   return (
     <section>
       <div className="container">
