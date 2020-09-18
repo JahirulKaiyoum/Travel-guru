@@ -1,4 +1,5 @@
 import React from 'react';
+import GoogleMap from '../Googlemap/GoogleMap';
 import './hotel.css'
 const Hotel = (props ) => {
 console.log(props);
@@ -21,7 +22,8 @@ console.log(props);
                     </div>
                 </div>
                 </div>
-                <div className="col-md-6">
+                    <div className="col-md-6">
+                        <GoogleMap></GoogleMap>
                 </div>
         </div>
     </div>

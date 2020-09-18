@@ -20,6 +20,11 @@ const SelectHotel = () => {
     }, [])
     
     return (
+
+
+        
+
+
         <div>
             {
                 hotels.map(hotel =><Hotel hotel={hotel}></Hotel>)

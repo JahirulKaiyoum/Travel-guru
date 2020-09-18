@@ -47,7 +47,7 @@ const Login = () => {
       const newUserInfo = { ...user };
       newUserInfo[e.target.name] = e.target.value;
       setUser(newUserInfo);
-      // console.log('submit');
+    
     }
   };
   const handleSubmit = (e) => {
@@ -60,7 +60,7 @@ const Login = () => {
         newUserInfo.accountCreated=true;
         setUser(newUserInfo);
         updateUserInfo(user.name);
-        // console.log(result);
+       
       })
       .catch( (error)=>{
         const newUserInfo = { ...user };
@@ -69,9 +69,7 @@ const Login = () => {
         const errorMessage = error.message;
         newUserInfo.accountCreated = false;
         setUser(newUserInfo);
-      // console.log(errorMessage);
 
-      
     });
     }
     if (!newUser && user.email && user.password) {
@@ -83,8 +81,7 @@ const Login = () => {
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
           history.replace(from);
-          // console.log("signedIn user info :" ,result.user);
-          // console.log(result);
+          
         })
         .catch(function (error) {
           const newUserInfo = { ...user };
@@ -93,7 +90,7 @@ const Login = () => {
           const errorMessage = error.message;
           newUserInfo.accountCreated = false;
           setUser(newUserInfo);
-        // console.log(errorMessage);
+        
       });
     }
   e.preventDefault();
@@ -106,9 +103,9 @@ const Login = () => {
       displayName: name,
   
     }).then(function() {
-      // console.log('usser name updated successfully');
+      
     }).catch(function(error) {
-      // console.log(error);
+      
     });
 }
 
@@ -163,7 +160,7 @@ const Login = () => {
     });
   }
   const handleSignOut = () => {
-    //console.log('Sign out');
+   
     firebase
       .auth()
       .signOut()
@@ -189,9 +186,7 @@ const Login = () => {
     <section>
       <div className="container">
         
-        {/*<div><h1>Email:{user.email}</h1>
-          <h2>Password:{user.password}</h2>
-  </div>*/}
+        
 
         <div className="row">
           <div className="col-md-6 offset-md-3">
@@ -225,30 +220,3 @@ const Login = () => {
 
 export default Login;
 
-
-// <Form.Group>
-//                 <Form.Control type="text" name='first-name' placeholder="First name" onBlur={handleBlur} required />
-//               </Form.Group>
-//               <Form.Group>
-//                 <Form.Control type="text" name='last-name' placeholder="Last name" onBlur={handleBlur} required/>
-//               </Form.Group>
-
-//               <Form.Group>
-//                 <Form.Control type="email" name="email" placeholder="Enter email" onBlur={handleBlur} required />
-//               </Form.Group>
-
-//               <Form.Group>
-//                 <Form.Control type="password" name="password" placeholder="Password" onBlur={handleBlur} required/>
-//               </Form.Group>
-//               <Form.Group>
-//                 <Form.Control type="password" name="confirm-password" placeholder="Confirm password" onBlur={handleBlur}/>
-              // </Form.Group>
-              // <input type="submit" value="Create account" required></input>
-                    
-              // <Button variant="primary" type="submit" className="create-btn" onClick={handleSubmit}>
-              //   Create an account
-              // </Button>
-
-                          // <p className="text-center">
-                          //   Already have an account? <button>Login</button>
-                          // </p>
