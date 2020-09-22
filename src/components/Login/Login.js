@@ -23,14 +23,24 @@ const Login = () => {
     password: '',
     error: '',
     accountCreated: false,
+    confirmPassWord:'',
     
 
   })
   const [newUser, setNewUser] = useState(false);
 
-
+  const [pass, setPass] = useState(
+     {
+      password: '',
+      confirmPass:'',
+    }
+  );
+  
   const handleBlur = (e) => {
+    
+    
     let isFormValid = true;
+    //let passVal = "";
 
     if (e.target.name === "email") {
 
@@ -40,9 +50,35 @@ const Login = () => {
 
       const  isPasswordValid = e.target.value.length > 8;
       const isPassword = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(e.target.value);
-       isFormValid = isPasswordValid && isPassword;
+      isFormValid = isPasswordValid && isPassword;
+
+      const newpass = {e.target.name: e.target.value }
+      setPass(newpass)
+
+
+     // passVal = passVal + e.target.value;
+      // console.log(passVal);
 
     }
+   
+
+    if (e.target.name === "confirmPassword") {
+      pass.confirmPass = e.target.value;
+       
+      
+      // if (confirmPass === passVal) {
+      //   isFormValid = true;
+      // //  console.log('pass matched');
+      // }
+      // else {
+      //   isFormValid = false;
+      // //  console.log("pass did not matched");
+      // }
+    }
+    
+
+
+
     if (isFormValid) {
       const newUserInfo = { ...user };
       newUserInfo[e.target.name] = e.target.value;
@@ -50,6 +86,14 @@ const Login = () => {
     
     }
   };
+  console.log(pass);
+
+
+
+
+
+
+
   const handleSubmit = (e) => {
  
   if (newUser&& user.email && user.password) {
@@ -84,12 +128,14 @@ const Login = () => {
           
         })
         .catch(function (error) {
+          console.log(error);
           const newUserInfo = { ...user };
           newUserInfo.error = error.message;
         const  errorCode = error.code;
           const errorMessage = error.message;
           newUserInfo.accountCreated = false;
           setUser(newUserInfo);
+         // console.log(errorMessage,errorCode);
         
       });
     }
@@ -190,20 +236,27 @@ const Login = () => {
 
         <div className="row">
           <div className="col-md-6 offset-md-3">
-            <form onSubmit={handleSubmit}>
-              <input type="checkbox" name="newUser" onChange={()=>setNewUser(!newUser) } />
+            <form onSubmit={handleSubmit} className="form-design">
+              
+              <input type="checkbox" name="newUser" onChange={()=>setNewUser(!newUser)  } />
               <label htmlFor="newUser"> SignUp if you don't have an account</label>
 
               {newUser && < input className="form-control" type="text" name="first-name" placeholder="first name" onBlur={handleBlur} required />}<br />
               {newUser && <input className="form-control" type="text" name="last-name" placeholder="last name" onBlur={handleBlur} required />}<br />
               
               <input className="form-control" type="email" name="email" placeholder="email" onBlur={handleBlur} required /><br/>
-              <input className="form-control"  type="password" name="password" placeholder="password" onBlur={handleBlur} required/> <br/>
-              {newUser ? <input className="form-control" type="submit" value="Create an Account" />:  <input className="form-control" type="submit" value="Login" />}
+              <input className="form-control" type="password" name="password" placeholder="password" onBlur={handleBlur} required /> <br />
+              {newUser&& <input className="form-control"  type="password" name="confirmPassword" placeholder="Confirm password" onBlur={handleBlur} required/> }<br/>
+              {newUser ? <input className="form-control btn-login" type="submit" value="Create an Account" />:  <input className="form-control btn-login" type="submit" value="Login" />}
               {
                 user.accountCreated ? <p style={{color: "green"}}>Account {newUser? "created" :"LoggedIn "} successfully</p> : <p style={{color: "red"}}>{user.error}</p>
               }
-                          
+              {
+                newUser ?
+                  <p className='text-center'>Have an account ? <span toggle-Btn onClick={() => setNewUser(!newUser)}>Login</span></p>
+                  : <p className='text-center'>Have an account ? <span className="toggle-Btn" onClick={() => setNewUser(!newUser)}>SignUp</span></p>
+              }
+              
             </form>
           </div>
         </div>

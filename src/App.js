@@ -27,7 +27,7 @@ function App() {
           <SelectHotel></SelectHotel>
           </PrivateRoute>
           
-          <Route exact path="/singlePlaceDetails/:placeId">
+          <Route exact path="/singlePlaceDetails/:placeName">
             <SinglePlaceDetails></SinglePlaceDetails>
           </Route>
           <Route  path="/home">
