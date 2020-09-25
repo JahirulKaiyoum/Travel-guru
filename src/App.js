@@ -10,6 +10,7 @@ import SinglePlaceDetails from "./components/SinglePlaceDetails/SinglePlaceDetai
 import Hotel from "./components/Hotel/Hotel";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import SelectHotel from "./components/SelectHotel/SelectHotel";
+import NotMatch from "./components/NotMatch/NotMatch";
 
 export const UserContext = createContext();
 
@@ -23,11 +24,11 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <PrivateRoute path="/destination">
+          <PrivateRoute path="/destination/:placeName/:Latitude/:Longitude">
           <SelectHotel></SelectHotel>
           </PrivateRoute>
           
-          <Route exact path="/singlePlaceDetails/:placeId">
+          <Route exact path="/singlePlaceDetails/:placeName">
             <SinglePlaceDetails></SinglePlaceDetails>
           </Route>
           <Route  path="/home">
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <Home></Home>
+          </Route>
+          <Route path="*">
+          <NotMatch></NotMatch>
           </Route>
         </Switch>
       </Router>

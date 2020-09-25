@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext, } from 'react';
 import { Button, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import logo from '../../images/Logo.png'
 import './Header.css'
 
 const Header = () => {
+    const[loggedInUser, setLoggedInUser]=useContext(UserContext)
+
     return (
         <div className='container'>
             <div className='row'>
@@ -28,6 +31,10 @@ const Header = () => {
                             <li>
                                 <Link to='/login'><Button>Login</Button></Link>
                             </li>
+                            <li>
+                            <Link to='/home'><Button onClick={()=>setLoggedInUser({})}>Logout</Button></Link >
+                            </li>
+
                              
                         </ul>
                     </nav>

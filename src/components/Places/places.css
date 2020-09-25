@@ -1,19 +1,19 @@
 .place-box {
-    background-image: url('../../images/sundorbon.png');
-    width: 320px; 
-     height: 450px; 
-     background-size: 250px;
-    background-repeat:no-repeat;
-    margin-right: 0px; 
-     overflow: hidden;
-  
+    position: relative; 
 }
 .place-box:hover{
 text-decoration: none;
-border: 1px solid gold;
+border: 5px solid gold;
+border-radius:10px;
+
 
 }
 
-.place-box h1{
-    margin-top:300px;
-}
+.place-box h2{
+    position: absolute;
+    left: 40px;
+    top:250px;
+    margin: 0 auto;
+    color: white;
+
+} 

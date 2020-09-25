@@ -6,4 +6,26 @@
     border-radius:50px;
     margin-bottom: 10px;
     padding:7px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+
+.form-design{
+    border: 2px solid#007bff;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top:100px;
+    border-radius:10px
+}
+
+.btn-login{
+        background-color:#007bff;
+        color: white;
+}
+
+
+.toggle-Btn{
+    color: Blue;
 }

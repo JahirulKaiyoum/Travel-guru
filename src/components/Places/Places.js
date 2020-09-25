@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import './places.css'
 
 const Places = (props) => {
-    const { name, id } = props.place;
+    const { placeName } = useParams();
+    const { name, id,img } = props.place;
     let location = useLocation();
     return (
         
             
-        <Link to={`/singlePlaceDetails/${id}`} className="col-md-4 place-box"  > 
-            
-                <h1 className="text-white text-botto">{name}</h1>
+        <Link to={`/singlePlaceDetails/${name}`} className="col-md-4 place-box align-items-center"  > 
+                <img src={img} alt="" className="img-fluid" />
+                <h2>{name}</h2>
                 
         </Link>
         
@@ -18,3 +19,4 @@ const Places = (props) => {
 };
 
 export default Places;
+
