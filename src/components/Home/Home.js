@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import fakePlaces from "../../FakePlaces/fakePlaces";
 import Places from "../Places/Places";
 import './Home.css'
+import bg from '../../images/Rectangle\ 1.png'
 
 const Home = () => {
   const allPlaces = fakePlaces;
@@ -18,7 +19,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="places-section">
+    <section className="places-section" style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${bg})` }} >
       <div className="container">
         <div className="row">
           <div className="col-md-4 place-description">

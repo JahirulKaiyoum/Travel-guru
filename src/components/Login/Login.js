@@ -46,7 +46,7 @@ const Login = () => {
     }
   };
 
-//////////////////////////////////////Form submit
+//////////////////////////////////////Form submit/////////////////
 
   const handleSubmit = (e) => {
   if (newUser&& user.email && user.password) {
@@ -92,6 +92,9 @@ const Login = () => {
   e.preventDefault();
 }
 
+  
+  /////////////////////// Update user info//////////////////
+
   const updateUserInfo = (name) => {
     var user = firebase.auth().currentUser;
     user.updateProfile({
@@ -104,7 +107,7 @@ const Login = () => {
     });
 }
 
-///////////////////////////googleSign
+///////////////////////////googleSign////////////////////
   
   const googleSignIn = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -131,7 +134,7 @@ const Login = () => {
   };
 
 
-  //////////////////////////////////////fbSignIn
+  //////////////////////////////////////fbSignIn/////////////////////////
 
   const fbSignIn = () => {
     var provider = new firebase.auth.FacebookAuthProvider();
@@ -154,6 +157,9 @@ const Login = () => {
 
     });
   }
+
+  //////////////////////////////SignOut////////////////////////
+  
   const handleSignOut = () => {
    
     firebase

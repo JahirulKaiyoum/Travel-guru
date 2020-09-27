@@ -32,20 +32,20 @@ const SinglePlaceDetails = () => {
           <div className="col-md-6 description-details">
          
             
-          <h1>{name}</h1>
-            <p>{description}</p>
+          <h1 className="text-white">{name}</h1>
+            <p className="text-white">{description}</p>
             
           </div>
           <div className="col-md-6">
             <Form className="form-design" onSubmit={handleSubmit}  >
               <Form.Group >
                 <Form.Label>Origin</Form.Label>
-                <Form.Control type="text" required='true' />
+                <Form.Control type="text" value="Dhaka" required='true' />
               </Form.Group>
 
               <Form.Group >
                 <Form.Label>Destination</Form.Label>
-                <Form.Control type="password"  required='true' />
+                <Form.Control type="text"   required='true' />
               </Form.Group>
               <Row>
                 <Col>
