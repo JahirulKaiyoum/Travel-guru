@@ -6,7 +6,7 @@ import './GoogleMap.css'
 
 const GoogleMap = (props) => {
     const { Latitude, Longitude } = props;
-    //console.log(Latitude, Longitude);
+   
 
     return (
         <Map center={[Latitude , Longitude]} zoom={12}>

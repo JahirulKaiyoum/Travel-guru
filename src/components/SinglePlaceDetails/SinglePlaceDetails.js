@@ -7,12 +7,12 @@ import './SinglePlaceDetails.css'
 const SinglePlaceDetails = () => {
   const { placeName } = useParams();
 
-  //const [place, setPlace] = useState({});
+
 
   const singlePlace = fakePlaces.find(selectedplace => selectedplace.name == placeName);
   const { id,name ,description,Latitude,Longitude } = singlePlace;
  
-  //const { id,name } = place;
+ 
   
   console.log('place name', name, 'place id', id);
   
@@ -29,11 +29,8 @@ const SinglePlaceDetails = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-6 description-details">
-         
-            
-          <h1 className="text-white">{name}</h1>
+         `` <h1 className="text-white">{name}</h1>
             <p className="text-white">{description}</p>
-            
           </div>
           <div className="col-md-6">
             <Form className="form-design" onSubmit={handleSubmit}  >
