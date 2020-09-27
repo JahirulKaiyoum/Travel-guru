@@ -3,7 +3,6 @@ import GoogleMap from '../Googlemap/GoogleMap';
 import './hotel.css'
 const Hotel = (props ) => {
 console.log(props);
-
     let { name, phone, address, image } = props.hotel;
     
     return (

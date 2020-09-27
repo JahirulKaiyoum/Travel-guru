@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { Link, useHistory, useParams } from "react-router-dom";
-
 import fakePlaces from "../../FakePlaces/fakePlaces";
 import './SinglePlaceDetails.css'
 
